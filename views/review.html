@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Feedback Form</title>
+
+    
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon">
+
+   
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+        
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f8f9fa;
+            background-image: url('./image.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .badge {
+            font-size: 1rem;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #congratsMessage {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+
+        /* Carousel Styles */
+        .carousel-item {
+            height: 300px;
+        }
+
+        .carousel-item .card {
+            height: 100%;
+        }
+
+        /* Custom rating preview */
+        #ratingPreview {
+            font-size: 1.2rem;
+            margin-left: 10px;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+      <!-- Spinner Start -->
+      <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+  </div>
+  <!-- Spinner End -->
+   
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                       <p class="m-0 fw-bold"><img src="img/logo.png" alt="">Tech<span
+                style="color: #d4af37;">Roots Club</span></p>>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="https://review-7l63.onrender.com" class="dropdown-item">Review</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Header -->
+        <header class="text-center mb-4">
+            <h1 class="display-4">Feedback Form</h1>
+            <p class="lead">We value your feedback! Please leave a review below.</p>
+        </header>
+
+        <!-- Review Form -->
+        <section class="card p-4 mb-5" id="leaveReview">
+            <h2 class="card-title mb-3">Leave a Review</h2>
+            <form id="reviewForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="rating" class="form-label">Rating</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-star-fill"></i></span>
+                            <select class="form-select" id="rating" required onchange="previewRating()">
+                                <option value="">Select rating</option>
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Good</option>
+                                <option value="3">3 - Average</option>
+                                <option value="2">2 - Below Average</option>
+                                <option value="1">1 - Poor</option>
+                            </select>
+                        </div>
+                        <span id="ratingPreview" class="text-muted"></span> <!-- Live rating preview -->
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="review" class="form-label">Your Review</label>
+                    <textarea class="form-control" id="review" rows="4" placeholder="Write your review here" required></textarea>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-lg">Submit Review</button>
+            </form>
+            
+            <script>
+            document.getElementById('reviewForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+            
+                // Get form values
+                const name = encodeURIComponent(document.getElementById('name').value);
+                const rating = encodeURIComponent(document.getElementById('rating').value);
+                const review = encodeURIComponent(document.getElementById('review').value);
+            
+                // Construct the URL with query parameters
+                const url = `./testimonial.html?name=${name}&rating=${rating}&review=${review}`;
+            
+                // Redirect to testimonial page
+                window.location.href = url;
+            });
+            
+            // Function to preview the rating (if needed)
+            function previewRating() {
+                const ratingValue = document.getElementById('rating').value;
+                const ratingPreview = document.getElementById('ratingPreview');
+                
+                if (ratingValue) {
+                    ratingPreview.textContent = `You selected ${ratingValue} star(s)`;
+                } else {
+                    ratingPreview.textContent = '';
+                }
+            }
+            </script>
+            
+        </section>
+
+        <!-- Congratulations Message -->
+        <section class="mb-5">
+            <div id="congratsMessage" class="alert alert-success text-center d-none" role="alert">
+                🎉 Congratulations! Your review has been submitted successfully! 🎉
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function previewRating() {
+            const rating = document.getElementById('rating').value;
+            const ratingPreview = document.getElementById('ratingPreview');
+            ratingPreview.textContent = rating ? `You selected: ${rating}` : '';
+        }
+
+        document.getElementById('reviewForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const rating = document.getElementById('rating').value;
+            const review = document.getElementById('review').value;
+
+            // Prepare data to send to backend
+            const data = {
+                name: name,
+                rating: rating,
+                review: review
+            };
+
+            // Send data to the backend using fetch
+            fetch(' http://localhost:5000/reviews', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message and reset form
+                    document.getElementById('congratsMessage').classList.remove('d-none');
+                    document.getElementById('reviewForm').reset();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-white" href="about.html">About Us</a></p>
+                    <p><a class="text-white" href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <a class="text-white mb-2"><i class="fa fa-map-marker-alt me-3"></i>delhi</a><br>
+                    <a class="text-white mb-2"href="tel:9643937497"><i class="fa fa-phone-alt me-3"></i>+91 9643937497</a><br>
+                    <a class="text-white mb-2"href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbzPsvPLHzPpbLzFkMHPzrlJZdQnlHcPHtBZNLmtBhpBGrDPcMMXlRFfgkLLHWbxhFjWL"target="_blank"><i class="fa fa-envelope me-3"></i>techrootsclub@gmail.com</a>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/techrootsclub/"target="_blank"><i class="fab fa-instagram"></i></a>
+                        <p class="text-white">Follow us on Instagram</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">TechRoots Club </a>, All Right Reserved.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+   <!-- Back to Top -->
+   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+   <!-- Template Javascript -->
+   <script src="js/main.js"></script>
+</body>
+
+</html>>
